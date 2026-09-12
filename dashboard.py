@@ -17,7 +17,6 @@ BUNDLER_NAMES = {
 
 st.set_page_config(
     page_title="ERC-4337 Bundler Monitor",
-    page_icon="https://raw.githubusercontent.com/Operant7-lang/erc4337-bundler-monitor/main/favicon.ico",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -38,7 +37,6 @@ header { visibility: hidden; }
 .block-container { padding: 0 !important; max-width: 100% !important; }
 [data-testid="stAppViewContainer"] { padding: 0 !important; }
 
-/* ── SCANLINE ── */
 body::before {
     content: '';
     position: fixed;
@@ -57,7 +55,6 @@ body::before {
     100% { top: 100vh; }
 }
 
-/* ── GRID BACKGROUND ── */
 body::after {
     content: '';
     position: fixed;
@@ -70,7 +67,6 @@ body::after {
     z-index: 0;
 }
 
-/* ── CORNER DECORATIONS ── */
 .corner-tl, .corner-br {
     position: fixed;
     width: 60px;
@@ -78,18 +74,9 @@ body::after {
     pointer-events: none;
     z-index: 100;
 }
-.corner-tl {
-    top: 0; left: 0;
-    border-top: 2px solid #cc0000;
-    border-left: 2px solid #cc0000;
-}
-.corner-br {
-    bottom: 0; right: 0;
-    border-bottom: 2px solid #cc0000;
-    border-right: 2px solid #cc0000;
-}
+.corner-tl { top: 0; left: 0; border-top: 2px solid #cc0000; border-left: 2px solid #cc0000; }
+.corner-br { bottom: 0; right: 0; border-bottom: 2px solid #cc0000; border-right: 2px solid #cc0000; }
 
-/* ── NAV ── */
 .nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -153,7 +140,6 @@ body::after {
     50% { opacity: 0.2; }
 }
 
-/* ── MAIN CONTENT ── */
 .page {
     position: relative;
     z-index: 1;
@@ -162,7 +148,6 @@ body::after {
     margin: 0 auto;
 }
 
-/* ── HERO ── */
 .hero {
     padding: 4rem 0 3rem;
     border-bottom: 1px solid rgba(204,0,0,0.15);
@@ -205,7 +190,6 @@ body::after {
     font-weight: 300;
 }
 
-/* ── STAT GRID ── */
 .stat-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -213,15 +197,13 @@ body::after {
     background: rgba(204,0,0,0.1);
     border: 1px solid rgba(204,0,0,0.15);
     margin-bottom: 1px;
-    animation: fadeUp 0.8s ease 0.2s both;
 }
 
 .stat-cell {
     background: #080808;
-    padding: 2rem 2rem;
+    padding: 2rem;
     position: relative;
     overflow: hidden;
-    cursor: default;
     transition: background 0.3s;
 }
 
@@ -270,7 +252,6 @@ body::after {
     letter-spacing: 0.1em;
 }
 
-/* ── CHART GRID ── */
 .chart-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -278,7 +259,6 @@ body::after {
     background: rgba(204,0,0,0.1);
     border: 1px solid rgba(204,0,0,0.15);
     margin-bottom: 1px;
-    animation: fadeUp 0.8s ease 0.4s both;
 }
 
 .panel {
@@ -297,7 +277,6 @@ body::after {
     margin-bottom: 1.5rem;
 }
 
-/* ── ALERT ── */
 .alert {
     display: flex;
     align-items: flex-start;
@@ -306,7 +285,6 @@ body::after {
     border: 1px solid rgba(204,0,0,0.15);
     background: #080808;
     margin-bottom: 1px;
-    animation: fadeUp 0.8s ease 0.6s both;
 }
 
 .alert-bar {
@@ -325,18 +303,12 @@ body::after {
     margin-bottom: 0.35rem;
 }
 
-.alert-body {
-    font-size: 0.85rem;
-    color: #555;
-    line-height: 1.6;
-}
+.alert-body { font-size: 0.85rem; color: #555; line-height: 1.6; }
 
-/* ── TABLE ── */
 .data-panel {
     background: #080808;
     border: 1px solid rgba(204,0,0,0.15);
     margin-bottom: 1px;
-    animation: fadeUp 0.8s ease 0.7s both;
 }
 
 .data-panel-header {
@@ -344,13 +316,11 @@ body::after {
     border-bottom: 1px solid rgba(204,0,0,0.1);
 }
 
-/* ── AI SECTION ── */
 .ai-panel {
     background: #080808;
     border: 1px solid rgba(204,0,0,0.15);
     padding: 2rem;
     margin-bottom: 1px;
-    animation: fadeUp 0.8s ease 0.8s both;
 }
 
 .ai-response {
@@ -361,10 +331,8 @@ body::after {
     font-size: 0.9rem;
     color: #ccc;
     line-height: 1.8;
-    font-family: 'Inter', sans-serif;
 }
 
-/* ── FOOTER ── */
 .footer {
     border-top: 1px solid rgba(204,0,0,0.1);
     padding-top: 2rem;
@@ -372,7 +340,6 @@ body::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: fadeUp 0.8s ease 0.9s both;
 }
 
 .footer-left {
@@ -391,13 +358,6 @@ body::after {
     text-transform: uppercase;
 }
 
-/* Override Streamlit elements */
-[data-testid="metric-container"] {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-}
-
 .stTextInput > div > div > input {
     background: #0d0000 !important;
     border: 1px solid rgba(204,0,0,0.3) !important;
@@ -411,14 +371,9 @@ body::after {
     border-color: #cc0000 !important;
     box-shadow: 0 0 0 1px rgba(204,0,0,0.3) !important;
 }
-
-.stDataFrame { border: none !important; }
-
-div[data-testid="stVerticalBlock"] > div { gap: 0 !important; }
 </style>
 """, unsafe_allow_html=True)
 
-# Corner decorations + nav
 st.markdown("""
 <div class="corner-tl"></div>
 <div class="corner-br"></div>
@@ -464,10 +419,8 @@ top1_share = float(bundler_stats.head(1)['market_share'].values[0])
 top1_name = bundler_stats.head(1)['bundler_name'].values[0]
 top3_share = float(bundler_stats.head(3)['market_share'].sum())
 
-# Page wrapper
 st.markdown('<div class="page">', unsafe_allow_html=True)
 
-# Hero
 st.markdown(f"""
 <div class="hero">
     <div class="hero-tag">// Independent Research Tool / Ethereum Mainnet</div>
@@ -483,7 +436,6 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# Stats
 st.markdown(f"""
 <div class="stat-grid">
     <div class="stat-cell">
@@ -513,9 +465,7 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# Charts
 st.markdown('<div class="chart-grid">', unsafe_allow_html=True)
-
 col1, col2 = st.columns(2)
 
 with col1:
@@ -533,7 +483,6 @@ with col2:
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# Timeline
 st.markdown("""
 <div style="background:#080808; border:1px solid rgba(204,0,0,0.15); border-top:none; padding:2rem; margin-bottom:1px;">
     <div class="panel-title">// Activity Timeline</div>
@@ -543,14 +492,13 @@ timeline.columns = ['Time', 'UserOps']
 st.line_chart(timeline.set_index('Time'), height=160, color="#cc0000")
 st.markdown('</div>', unsafe_allow_html=True)
 
-# Alert
 alert_color = "#cc0000" if top1_share > 40 else "#00cc44"
 alert_bg = "#0d0000" if top1_share > 40 else "#000d00"
 alert_title = "CONCENTRATION RISK DETECTED" if top1_share > 40 else "HEALTHY DISTRIBUTION"
 alert_msg = f"{top1_name} controls {top1_share}% of all UserOps. Top 3 bundlers combined: {top3_share:.1f}%. Significant centralization detected." if top1_share > 40 else f"No single bundler controls more than 40% of UserOps. Top 3 combined: {top3_share:.1f}% across {len(bundler_stats)} active bundlers."
 
 st.markdown(f"""
-<div class="alert" style="background:{alert_bg}; border-color:rgba({','.join(['204,0,0' if top1_share > 40 else '0,204,68'])},0.2);">
+<div class="alert" style="background:{alert_bg};">
     <div class="alert-bar" style="background:{alert_color}; box-shadow: 0 0 8px {alert_color};"></div>
     <div>
         <div class="alert-head" style="color:{alert_color};">{alert_title}</div>
@@ -559,7 +507,6 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# Recent UserOps
 st.markdown("""
 <div class="data-panel">
     <div class="data-panel-header">
@@ -571,7 +518,6 @@ display_df.columns = ['UserOp Hash', 'Bundler', 'Sender', 'Block', 'Time']
 st.dataframe(display_df, use_container_width=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
-# AI Analyst
 st.markdown("""
 <div class="ai-panel">
     <div class="panel-title">// AI Analyst</div>
@@ -606,7 +552,7 @@ Top bundlers:
 Data range: {df['time'].min()} to {df['time'].max()}"""
 
             response = client.models.generate_content(
-                model="gemini-2.0-flash",
+                model="gemini-3.6-flash",
                 contents=summary + "\n\nQuestion: " + user_question
             )
             st.markdown(f'<div class="ai-response">{response.text}</div>', unsafe_allow_html=True)
@@ -615,7 +561,6 @@ Data range: {df['time'].min()} to {df['time'].max()}"""
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# Footer
 st.markdown(f"""
 <div class="footer">
     <div class="footer-left">
