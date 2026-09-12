@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "api/collect.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/collect",
+      "dest": "api/collect.py"
+    }
+  ]
+}
